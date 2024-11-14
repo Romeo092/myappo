@@ -5,7 +5,7 @@ pipeline {
        string (name:'appo', DefaultValue:'1.0.3')
     }
     stages{
-        stage(){
+        stage(built image){
             steps{
                 script // This step should not normally be used in your script. Consult the inline help for details.
                         withDockerRegistry(credentialsId: 'ecr:us-east-1:romeo-id', url: 'https://ec2-100-25-202-201.compute-1.amazonaws.com/') {
