@@ -5,12 +5,11 @@ pipeline {
        string (name: 'appo' , defaultValue: '1.0.3' )
     }
     stages{
-        stage("built image2"){
+        stage("built image4"){
             steps{
                 script{ 
                      // This step should not normally be used in your script. Consult the inline help for details.
-                          withDockerRegistry(credentialsId: 'ecr:us-east-1:romeo-id', url: 'https://536442977594.dkr.ecr.us-east-1.amazonaws.com/') {
-} {
+                        withDockerRegistry(credentialsId: 'ecr:us-east-1:romeo-id', url: 'https://536442977594.dkr.ecr.us-east-1.amazonaws.com/')
                      sh  "docker build -t romeo_cre:${params.appo} ."
                      sh "docker tag romeo_cre:${params.appo} 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre:${params.appo}"
                      sh "docker tag romeo_cre:${params.appo} 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre:latest"
