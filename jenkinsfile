@@ -5,7 +5,7 @@ pipeline {
        string (name: 'appo' , defaultValue: '1.0.3' )
     }
     stages{
-        stage("built image1"){
+        stage("built image2"){
             steps{
                 script{ 
                     // This step should not normally be used in your script. Consult the inline help for details.
