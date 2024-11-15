@@ -13,7 +13,7 @@ pipeline {
                      sh  "docker build -t romeo_cre:${params.appo} ."
                      sh "docker tag romeo_cre:${params.appo} 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre:${params.appo}"
                      sh "docker tag romeo_cre:${params.appo} 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre:latest"
-                     sh "docker push 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre:latest"
+                     sh "docker push 536442977594.dkr.ecr.us-east-1.amazonaws.com/romeo_cre"
                      }
                 }
             }
